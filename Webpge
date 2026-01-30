@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', 'Trebuchet MS', sans-serif;
+      background: linear-gradient(135deg, #ffd6e8, #fff1f7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      text-align: center;
+      width: 350px;
+    }
+
+    img.main-img {
+      width: 180px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      color: #ff4f8b;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #yesBtn {
+      background-color: #ff4f8b;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #ddd;
+    }
+
+    #secretPage {
+      display: none;
+    }
+
+    .back-btn {
+      margin-top: 20px;
+      background-color: #aaa;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MAIN PAGE -->
+  <div class="card" id="mainPage">
+    <!-- Replace src with your image -->
+    <img src="needoh.png" alt="Needoh" class="main-img" id="needohImg" />
+    <h1 id="question">Will you be my Valentine? 💖</h1>
+    <p id="subtext">I promise this is very important.</p>
+
+    <div class="buttons">
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+  </div>
+
+  <!-- SECRET LOVE LETTER PAGE -->
+  <div class="card" id="secretPage">
+    <h1>💌 Secret Page 💌</h1>
+    <p>
+      <!-- WRITE YOUR LOVE LETTER HERE -->
+      This is where you write your heartfelt message.
+      You can talk about memories, inside jokes, or why
+      they matter to you.
+    </p>
+    <button class="back-btn" onclick="goBack()">Go Back</button>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const question = document.getElementById('question');
+    const subtext = document.getElementById('subtext');
+    const needohImg = document.getElementById('needohImg');
+
+    let noScale = 1;
+    let yesStage = 0;
+
+    const yesTexts = [
+      'Yes',
+      'Are you sure?',
+      'Like REALLY sure?',
+      'Last chance 😳',
+      'Okay you mean it 💕'
+    ];
+
+    noBtn.addEventListener('click', () => {
+      noScale -= 0.15;
+      noBtn.style.transform = `scale(${noScale})`;
+
+      if (noScale <= 0.2) {
+        noBtn.style.display = 'none';
+        subtext.textContent = 'The universe has decided.';
+      }
+    });
+
+    yesBtn.addEventListener('click', () => {
+      yesStage++;
+
+      if (yesStage < yesTexts.length) {
+        yesBtn.textContent = yesTexts[yesStage];
+        question.textContent = 'So… will you be my Valentine? 💘';
+      } else {
+        question.textContent = 'YAY!!! 💕🥰';
+        subtext.textContent = 'Best decision ever.';
+        yesBtn.style.display = 'none';
+        noBtn.style.display = 'none';
+      }
+    });
+
+    // SECRET PAGE TRIGGER (clicking the Needoh image)
+    needohImg.addEventListener('click', () => {
+      document.getElementById('mainPage').style.display = 'none';
+      document.getElementById('secretPage').style.display = 'block';
+    });
+
+    function goBack() {
+      document.getElementById('secretPage').style.display = 'none';
+      document.getElementById('mainPage').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
