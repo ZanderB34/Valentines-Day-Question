@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I NEEDOH know if you will be my Valentine?</title>
+
+  <style>
+    body {
+      font-family: 'Comic Sans MS', 'Trebuchet MS', sans-serif;
+      background: linear-gradient(270deg, #d400ff, #ff9100);
+      background-size: 600% 600%;
+      animation: gradientShift 12s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Sparkles */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        radial-gradient(2px 2px at 20% 30%, #ffffff 50%, transparent 51%);
+
+      opacity: 0.8;
+      animation: sparkleMove 6s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes sparkleMove {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-40px); }
+    }
+
+    .card {
+      background: rgb(255, 255, 255);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      text-align: center;
+      width: 350px;
+      position: relative;
+      z-index: 2;
+      animation: floatCard 4s ease-in-out infinite;
+    }
+
+    @keyframes floatCard {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    img.main-img {
+      width: 180px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    img.letter-img {
+      width: 200px;
+      margin-bottom: 15px;
+      border-radius: 15px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      color: #ff4f8b;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #yesBtn {
+      background-color: #ff4f8b;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #ddd;
+    }
+
+    #secretPage {
+    display: none;
+    max-height: 80vh;        /* limits card height to 80% of viewport */
+    overflow-y: auto;        /* allows vertical scrolling if content is too tall */
+    padding: 30px;
+    box-sizing: border-box;  /* ensures padding doesn’t break layout */
+}
+    #secretPage::-webkit-scrollbar {
+    width: 8px;
+}
+
+    #secretPage::-webkit-scrollbar-thumb {
+    background-color: #ff4f8b;
+    border-radius: 4px;
+}
+
+    .back-btn {
+      margin-top: 20px;
+      background-color: #aaa;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MAIN PAGE -->
+  <div class="card" id="mainPage">
+    <img src="needoh.jpg" alt="Needoh" class="main-img" id="needohImg" />
+    <h1 id="question">I NEEDOH know if you will be my Valentine?</h1>
+    <p id="subtext">And you are dying if you dont tell me.</p>
+
+    <div class="buttons">
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+  </div>
+
+  <!-- SECRET LOVE LETTER PAGE -->
+  <div class="card" id="secretPage">
+    <!-- SECOND IMAGE ON LOVE LETTER PAGE -->
+    <img src="cutephoto.jpg" alt="Love" class="letter-img" />
+
+    <h1>I know that I havent given you one of my letters in a minute.</h1>
+    <p>
+      Roxy, 
+      <br>
+      There isn't much for me to say, I think (atleast I hope) you know how I feel towards you. But that's on the surface. Although it's impossible
+      for me to truly tell you how I feel, I think I'd rather explain everything to you in both reminders and crappy metaphors (haha). I'll start with
+      my mornings, because they hold so much more meaning than I say they do. Every morning, I wake up to my alarm clock, frantically check if I missed 
+      any calls or texts from you and get up. In those moments between me getting up and checking my phone, I always wonder how in the world it takes 
+      you atleast 10 alarms to wake up. On most days, periodically while I get ready for school, you'll text me the most random thing (usually misspelled),
+      and then go back to bed until your real alarm wakes you up. It may not seem like much, but those texts mean the world to me; they give me subtle 
+      remnants of your presence, reminding me that you're always with me. As I finally leave and get on the road, I'll think about how our life could be
+      in the future. I watch the sunrise, with usually Tyler Childers, John Mayer, or Jack Johnson on the radio and think of you. Even though the sun 
+      rises behind me. I still lose my gaze in seeing it happen in real time, day dreaming and fantasizing about our love. I think of the sunrise as 
+      the start of something beautiful. The way it opens, greeting the rest of the world with its bright orange color, causes me to do nothing but be reminded of you. 
+      As I listen to these songs and watch something so bright and gentle cast its light on the world, I'd usually get my first real goodmorning text from you. 
+      While it may not seem much to your end, that text serves as a reminder for me that you are like the sun. Your bright and colorful personality lit up 
+      my own night sky. Sometimes, in the fleeting moments where I can watch the sunrise in my rearview mirror, and feel the warmth caused by it on a cold January, I'd 
+      break down for a minute. I'd shed tears not because of how pretty the sunrise is, I'd cry because it reminds me of you. It reminds me of us. I can't ever 
+      escape your rays of sunshine, just as the Earth cannot escape the sun. You have me ensnared in your love, your warmth, and above all your gentleness. You 
+      are like the sun, Roxy, and I'm reminded of it every single day. I cherish every moment we have together, no matter the situation. Because above all odds, every 
+      morning, I'm shown both your sunrise and the sun's, and I cannot help but think that you two are interlinked. While I may be just a young kid in love, and our 
+      future may not be 100% certain. I have this feeling that as long as I can witness the sunrise in the morning, I can also feel your own blossom of love 
+      and light, because you and the sun must be the same. I love you.
+    </p>
+    <button class="back-btn" onclick="goBack()">Go Back</button>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const question = document.getElementById('question');
+    const subtext = document.getElementById('subtext');
+    const needohImg = document.getElementById('needohImg');
+
+    let noScale = 1;
+    let yesStage = 0;
+
+    const yesTexts = [
+      'Yes', 
+      'Are you sure? be chill about this',
+      'Hmmm lying just for fun', 
+      'Nuh uh you lying da fuq', 
+      'Okayyyy fine whateva ❤️'
+    ];
+
+    noBtn.addEventListener('click', () => {
+      noScale -= 0.15;
+      noBtn.style.transform = `scale(${noScale})`;
+      if (noScale <= 0.2) {
+        noBtn.style.display = 'none';
+        subtext.textContent = 'You are dying catch this fade';
+      }
+    });
+
+    yesBtn.addEventListener('click', () => {
+      yesStage++;
+      if (yesStage < yesTexts.length) {
+        yesBtn.textContent = yesTexts[yesStage];
+      } else {
+        question.textContent = 'Aww i love you Roxy always and forever';
+        subtext.textContent =  'Now go ahead and feel the needoh'; 
+        yesBtn.style.display = 'none';
+        noBtn.style.display = 'none';
+      }
+    });
+
+    needohImg.addEventListener('click', () => {
+      document.getElementById('mainPage').style.display = 'none';
+      document.getElementById('secretPage').style.display = 'block';
+    });
+
+    function goBack() {
+      document.getElementById('secretPage').style.display = 'none';
+      document.getElementById('mainPage').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
